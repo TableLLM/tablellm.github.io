@@ -146,6 +146,16 @@
 
           <div class="column has-text-centered">
             <div class="publication-links">
+              <!-- Model Link. -->
+              <span class="link-block">
+                <a href="https://huggingface.co/KAKA22/TableLLM-13b"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-cube"></i>
+                  </span>
+                  <span>Model</span>
+                  </a>
+              </span>
               <!-- Code Link. -->
               <span class="link-block">
                 <a href="https://github.com/TableLLM/TableLLM"
@@ -174,28 +184,38 @@
   </div>
 </section>
 
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="./static/videos/platform.mp4"
+                type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered">
+        <span class="dnerf">Table Manipulation using TableLLM on our platform
+      </h2>
+    </div>
+  </div>
+</section>
 
 <section class="section">
   <div class="container is-max-desktop">
     <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
             We introduce TableLLM, a robust large language model (LLM) with 13 billion parameters, 
-            purpose-built for proficiently handling tabular data manipulation tasks, 
-            whether they are embedded within documents or spreadsheets, catering to real-world office scenarios.
-            We propose a distant supervision method for training, 
-            which comprises a reasoning process extension strategy, 
-            aiding in training LLMs to understand reasoning patterns more effectively 
+            purpose-built for proficiently handling tabular data manipulation tasks, whether they are 
+            embedded within documents or spreadsheets, catering to real-world office scenarios.
+            We propose a distant supervision method for training, which comprises a reasoning process 
+            extension strategy, aiding in training LLMs to understand reasoning patterns more effectively 
             as well as a cross-way validation strategy, ensuring the quality of the self-created data.
-          </p>
-          <p>
-            To evaluate the performance of TableLLM, 
-            we have crafted a benchmark tailored to address both document and spreadsheet formats 
-            as well as constructed a well-organized evaluation pipeline capable of handling both scenarios. 
-            Thorough evaluations underscore the advantages of TableLLM 
-            when compared to various existing general-purpose and tabular data-focused LLMs.
+            To evaluate the performance of TableLLM, we have crafted a benchmark tailored to address 
+            both document and spreadsheet formats as well as constructed a well-organized evaluation 
+            pipeline capable of handling both scenarios. Thorough evaluations underscore the advantages 
+            of TableLLM when compared to various existing general-purpose and tabular data-focused LLMs.
           </p>
         </div>
       </div>
@@ -204,10 +224,9 @@
   </div>
 </section>
 
-
 <section class="section">
   <div class="container is-max-desktop">
-    <!-- Animation. -->
+    <!-- Evaluation Results -->
     <div class="columns is-centered">
       <div class="column is-full-width">
         <h2 class="title is-3">Evaluation Results</h2>
@@ -240,161 +259,27 @@
             </tbody>
           </table>
         </figure>
-        <br/>
-        <!--/ Interpolating. -->
-
-        <!-- benchmark. -->
-        <h2 class="title is-3">Benchmark Details</h2>
-        <div class="content has-text-justified">
-          <p>
-            We use six public benchmarks and one self-created benchmark for evaluation. 
-            As the public benchmarks we used are modified to fit the application scenario of TLLM, 
-            we provide a detailed description of these public benchmarks and self-created benchmarks below. 
-            You can obtain the original file of these benchmarks in <code>benchmark</code> folder.
-          </p>
-        </div>
-
-        <li>WikiTQ: Limit the table to a token count of less than 500 and randomly sample 633 instances.</li>
-        <li>TAT-QA: Limit the table to a token count of less than 500 and randomly sample 800 instances.</li>
-        <li>FeTaQA: Limit the table to a token count of less than 500 and randomly sample 753 instances.</li>
-        <li>OTTQA: Limit the table to a token count of less than 500 and use all instances that meet this condition.</li>
-        <li>WikiSQL: As the WikiSQL testset contains incorrect answers and ambiguous questions, we manually filter out 1000 records and construct a subset of the WikiSQL testset called wikisql-human-annotated.</li>
-        <li>Spider: As TLLM currently focuses on single-table queries, we filter out single-table questions in Spider dev ser and also remove questions whose answers are empty.</li>
-        <li>Self-created: We create a new benchmark, including the insert, delete, update, query, merge, and plot operations of tables. For more details, please refer to the paper.</li>
-
-        <!--/ benchmark. -->
-
       </div>
     </div>
-    <!--/ Animation. -->
-
-    <!--/ inference. -->
+    
+    <!-- Contact -->
     <div class="columns is-centered">
       <div class="column is-full-width">
-        <h2 class="title is-3">Inference</h2>
-
+        <h2 class="title is-3">Contact</h2>
         <div class="content has-text-justified">
           <p>
-            The inference results of TLLM are provided in <code>inference/results</code> folder. 
-            You can also obtain the inference result by yourself. 
-            The example commands of code and text generation are shown below:
+            If you have any questions, we encourage you to either create Github issues 
+            or get in touch with us at <a href="mailto:tabularllm@gmail.com">tabularllm@gmail.com</a>.
           </p>
-          <pre><code>cd inference
-python inference.py --dataset wikisql --model_path TLLM-13b
-python inference.py --dataset wtq --model_path TLLM-13b</code></pre>
         </div>
       </div>
     </div>
-
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Prompt Template</h2>
-
-        <div class="content has-text-justified">
-          <p>
-            The prompts we used for generating code solutions and text answers are introduced below.
-          </p>
-        </div>
-        <h3 class="title is-4">Code Solution</h3>
-        <div class="content has-text-justified">
-          <p>
-            The prompt template for the insert, delete, update, query, and plot operations on a single table.
-          </p>
-        </div>
-        <pre><code>[INST]Below are the first few lines two CSV file. You need to write a Python program to solve the provided question.
-          
-Header and first few lines of CSV file 1:
-{csv_data1}
-
-Header and first few lines of CSV file 2:
-{csv_data2}
-
-Question: {question}[/INST]</code></pre><br>
-        <div class="content has-text-justified">
-          <p>
-            The csv_data field is filled with the first few lines of your provided table file. Below is an example:
-          </p>
-        </div>
-        <pre><code>Sex,Length,Diameter,Height,Whole weight,Shucked weight,Viscera weight,Shell weight,Rings
-M,0.455,0.365,0.095,0.514,0.2245,0.101,0.15,15
-M,0.35,0.265,0.09,0.2255,0.0995,0.0485,0.07,7
-F,0.53,0.42,0.135,0.677,0.2565,0.1415,0.21,9
-M,0.44,0.365,0.125,0.516,0.2155,0.114,0.155,10
-I,0.33,0.255,0.08,0.205,0.0895,0.0395,0.055,7</code></pre><br>
-        <h3 class="title is-4">Text Answer</h3>
-        <div class="content has-text-justified">
-          <p>
-            The prompt template for direct text answer generation on short tables.
-          </p>
-        </div>
-        <pre><code>[INST]Offer a thorough and accurate solution that directly addresses the Question outlined in the [Question].
-### [Table Text]
-{table_descriptions}
-          
-### [Table]
-```
-{table_in_csv}
-```
-          
-### [Question]
-{question}
-          
-### [Solution][INST/]</code></pre><br>
-      </div>
-    </div>
-
-
-
-    <!-- Concurrent Work. -->
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Evaluation</h2>
-
-        <div class="content has-text-justified">
-          <p>
-            The python code in <code>evaluation</code> folder is used for reproducing evaluation results. 
-            For code generation benchmarks, you can run the following command to reproduce the result of TLLM-13b on WikiSQL:
-          </p>
-          <pre><code>cd evaluation/wikisql-eval
-tar -zxvf csv_tables.tar.gz 
-python eval.py --infer_data ../../inference/results/TLLM-13b/Infer_wikisql.jsonl</code></pre>
-        </div>
-        <p>
-          For text generation, as the <a href="https://github.com/thu-coai/CritiqueLLM">[CritiqueLLM]</a> we used has not been published yet, 
-          the judgement of CritiqueLLM is not reproducible. 
-          However, you can obtain the judgement result in <code>inference/results</code> folder and reproduce the results using the following command:
-        </p>
-        <pre><code>cd evaluation/text-eval
-python get_sum_grade.py --grade_data ../../inference/results/TLLM-13b/Grade_wtq.jsonl</code></pre>
-      </div>
-    </div>
-    <!--/ Concurrent Work. -->
-
-    <div class="column is-full-width">
-      <h2 class="title is-3">Contact</h2>
-
-      <div class="content has-text-justified">
-        <p>
-          If you have any questions, we encourage you to either create Github issues 
-          or get in touch with us at <a href="mailto:tabularllm@gmail.com">tabularllm@gmail.com</a>.
-        </p>
-    </div>
-  </div>
   </div>
 </section>
 
 
 <footer class="footer">
   <div class="container">
-    <div class="content has-text-centered">
-      <a class="icon-link"
-         href="./static/videos/nerfies_paper.pdf">
-        <i class="fas fa-file-pdf"></i>
-      </a>
-      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
-        <i class="fab fa-github"></i>
-      </a>
-    </div>
     <div class="columns is-centered">
       <div class="column is-8">
         <div class="content">
