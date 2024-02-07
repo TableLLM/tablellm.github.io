@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Deformable Neural Radiance Fields creates free-viewpoint portraits (nerfies) from casually captured videos.">
+  <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TableLLM: Enabling Tabular Data Manipulation by LLMs in Real Office Usage Scenarios</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <style>
+    table {
+        padding: 0;
+        word-break: initial;
+    }
+    table tr {
+        border: 1px solid #dfe2e5;
+        margin: 0;
+        padding: 0;
+    }
+    table tr:nth-child(2n),
+    thead {
+        background-color: #f8f8f8;
+    }
+    table th {
+        font-weight: bold;
+        border: 1px solid #dfe2e5;
+        border-bottom: 0;
+        margin: 0;
+        padding: 6px 13px;
+    }
+    table td {
+        border: 1px solid #dfe2e5;
+        margin: 0;
+        padding: 6px 13px;
+    }
+    table th:first-child,
+    table td:first-child {
+        margin-top: 0;
+    }
+    table th:last-child,
+    table td:last-child {
+        margin-bottom: 0;
+    }
+    h1 {
+        font-size: 2.25em;
+        line-height: 1.2;
+        border-bottom: 1px solid #eee;
+    }
+    h2 {
+        font-size: 1.75em;
+        line-height: 1.225;
+        border-bottom: 1px solid #eee;
+    }
+  </style>
+</head>
+<body>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h2 class="title is-1 publication-title">TableLLM: Enabling Tabular Data Manipulation by LLMs in Real Office Usage Scenarios</h2>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a>Xiaokang Zhang</a><sup>1*</sup>,
+            </span>
+            <span class="author-block">
+              <a>Jing Zhang</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a>Zeyao Ma</a><sup>1*</sup>,
+            </span>
+            <span class="author-block">
+              <a>Yang Li</a><sup>1*</sup>,
+            </span>
+            <span class="author-block">
+              <a>Bohan Zhang</a><sup>1*</sup>,
+            </span>
+            <span class="author-block">
+              <a>Guanlin Li</a><sup>1*</sup>,
+            </span>
+            <span class="author-block">
+              <a>Zijun Yao</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a>Kangli Xu</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a>Jinchang Zhou</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a>Daniel Zhang-Li</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a>Jifan Yu</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a>Shu Zhao</a><sup>3</sup>,
+            </span>
+            <span class="author-block">
+              <a>Juanzi Li</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a>Jie Tang</a><sup>2</sup>,
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup> School of Information, Renmin University of China, China</span><br>
+            <span class="author-block"><sup>2</sup>Computer Science, Tsinghua University</span><br>
+            <span class="author-block"><sup>3</sup> Computer Science, Anhui University, China</span><br>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2011.12948"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2011.12948"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/google/nerfies"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+              <span class="link-block">
+                <a href="https://github.com/google/nerfies/releases/tag/0.1"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                  </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <div class="content has-text-justified">
+          <p>
+            We present <strong>T</strong>able<strong>LLM</strong>, 
+            a powerful large language model designed to handle tabular data manipulation tasks efficiently, 
+            whether they are embedded in spreadsheets or documents, 
+            meeting the demands of real office scenarios. 
+            The TLLM series encompasses two distinct scales: 
+            <a herf="https://huggingface.co/KAKA22/TLLM-7b">[TLLM-7B]</a> and 
+            <a herf="https://huggingface.co/KAKA22/TLLM-13b">[TLLM-13B]</a>, 
+            which are fine-tuned based on CodeLlama-7B and 13B.
+          </p>
+          <p>
+            TLLM generates either a code solution or a direct text answer 
+            to handle tabular data manipulation tasks based on different scenarios. 
+            Code generation is used for handling spreadsheet-embedded tabular data, 
+            which often involves the insert, delete, update, query, merge, and plot operations of tables. 
+            Text generation is used for handling document-embedded tabular data, 
+            which often involves the query operation of short tables.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Animation. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Evaluation Results</h2>
+        <div class="content has-text-justified">
+          <p>
+            We evaluate the code solution generation ability of TLLM on three benchmarks: 
+            WikiSQL, Spider and Self-created table operation benchmark. 
+            The text answer generation ability is tested on four benchmarks: 
+            WikiTableQuestion (WikiTQ), TAT-QA, FeTaQA and OTTQA. 
+            The evaluation result is shown below:
+          </p>
+        </div>
+        <figure class='table-figure'>
+          <table>
+            <thead><tr><th style='text-align:left;' ><span>Model</span></th><th style='text-align:center;' ><span>WikiTQ</span></th><th style='text-align:center;' ><span>TAT-QA</span></th><th style='text-align:center;' ><span>FeTaQA</span></th><th style='text-align:center;' ><span>OTTQA</span></th><th style='text-align:center;' ><span>WikiSQL</span></th><th style='text-align:center;' ><span>Spider</span></th><th style='text-align:center;' ><span>Self-created</span></th><th style='text-align:center;' ><span>Average</span></th></tr></thead>
+            <tbody>
+              <tr><td style='text-align:left;' ><span>TaPEX</span></td><td style='text-align:center;' ><span>38.5</span></td><td style='text-align:center;' ><span>–</span></td><td style='text-align:center;' ><span>–</span></td><td style='text-align:center;' ><span>–</span></td><td style='text-align:center;' ><span>83.9</span></td><td style='text-align:center;' ><span>15.0</span></td><td style='text-align:center;' ><span>/</span></td><td style='text-align:center;' ><span>45.8</span></td></tr>
+              <tr><td style='text-align:left;' ><span>TaPas</span></td><td style='text-align:center;' ><span>31.5</span></td><td style='text-align:center;' ><span>–</span></td><td style='text-align:center;' ><span>–</span></td><td style='text-align:center;' ><span>–</span></td><td style='text-align:center;' ><span>74.2</span></td><td style='text-align:center;' ><span>23.1</span></td><td style='text-align:center;' ><span>/</span></td><td style='text-align:center;' ><span>42.92</span></td></tr>
+              <tr><td style='text-align:left;' ><span>TableLlama</span></td><td style='text-align:center;' ><span>24.0</span></td><td style='text-align:center;' ><span>22.2</span></td><td style='text-align:center;' ><span>20.5</span></td><td style='text-align:center;' ><span>6.4</span></td><td style='text-align:center;' ><span>43.7</span></td><td style='text-align:center;' ><span>9.0</span></td><td style='text-align:center;' ><span>/</span></td><td style='text-align:center;' ><span>20.7</span></td></tr>
+              <tr><td style='text-align:left;' ><span>GPT3.5</span></td><td style='text-align:center;' ><span>58.5</span></td><td style='text-align:center;' ><ins><span>72.1</span></ins></td><td style='text-align:center;' ><span>71.2</span></td><td style='text-align:center;' ><span>60.8</span></td><td style='text-align:center;' ><span>81.7</span></td><td style='text-align:center;' ><span>67.4</span></td><td style='text-align:center;' ><span>77.1</span></td><td style='text-align:center;' ><span>69.8</span></td></tr>
+              <tr><td style='text-align:left;' ><span>GPT4</span></td><td style='text-align:center;' ><strong><span>74.1</span></strong></td><td style='text-align:center;' ><strong><span>77.1</span></strong></td><td style='text-align:center;' ><strong><span>78.4</span></strong></td><td style='text-align:center;' ><strong><span>69.5</span></strong></td><td style='text-align:center;' ><span>84.0</span></td><td style='text-align:center;' ><span>69.5</span></td><td style='text-align:center;' ><span>77.8</span></td><td style='text-align:center;' ><strong><span>75.8</span></strong></td></tr>
+              <tr><td style='text-align:left;' ><span>Llama2-Chat (13B)</span></td><td style='text-align:center;' ><span>48.8</span></td><td style='text-align:center;' ><span>49.6</span></td><td style='text-align:center;' ><span>67.7</span></td><td style='text-align:center;' ><span>61.5</span></td><td style='text-align:center;' ><span>–</span></td><td style='text-align:center;' ><span>–</span></td><td style='text-align:center;' ><span>–</span></td><td style='text-align:center;' ><span>56.9</span></td></tr>
+              <tr><td style='text-align:left;' ><span>CodeLlama (13B)</span></td><td style='text-align:center;' ><span>43.4</span></td><td style='text-align:center;' ><span>47.2</span></td><td style='text-align:center;' ><span>57.2</span></td><td style='text-align:center;' ><span>49.7</span></td><td style='text-align:center;' ><span>38.3</span></td><td style='text-align:center;' ><span>21.9</span></td><td style='text-align:center;' ><span>47.6</span></td><td style='text-align:center;' ><span>43.6</span></td></tr>
+              <tr><td style='text-align:left;' ><span>Deepseek-Coder (33B)</span></td><td style='text-align:center;' ><span>6.5</span></td><td style='text-align:center;' ><span>11.0</span></td><td style='text-align:center;' ><span>7.1</span></td><td style='text-align:center;' ><span>7.4</span></td><td style='text-align:center;' ><span>72.5</span></td><td style='text-align:center;' ><span>58.4</span></td><td style='text-align:center;' ><span>73.9</span></td><td style='text-align:center;' ><span>33.8</span></td></tr>
+              <tr><td style='text-align:left;' ><span>StructGPT (GPT3.5)</span></td><td style='text-align:center;' ><span>52.5</span></td><td style='text-align:center;' ><span>27.5</span></td><td style='text-align:center;' ><span>11.8</span></td><td style='text-align:center;' ><span>14.0</span></td><td style='text-align:center;' ><span>67.8</span></td><td style='text-align:center;' ><strong><span>84.8</span></strong></td><td style='text-align:center;' ><span>/</span></td><td style='text-align:center;' ><span>48.9</span></td></tr>
+              <tr><td style='text-align:left;' ><span>Binder (GPT3.5)</span></td><td style='text-align:center;' ><span>61.6</span></td><td style='text-align:center;' ><span>12.8</span></td><td style='text-align:center;' ><span>6.8</span></td><td style='text-align:center;' ><span>5.1</span></td><td style='text-align:center;' ><span>78.6</span></td><td style='text-align:center;' ><span>52.6</span></td><td style='text-align:center;' ><span>/</span></td><td style='text-align:center;' ><span>42.5</span></td></tr>
+              <tr><td style='text-align:left;' ><span>DATER (GPT3.5)</span></td><td style='text-align:center;' ><span>53.4</span></td><td style='text-align:center;' ><span>28.4</span></td><td style='text-align:center;' ><span>18.3</span></td><td style='text-align:center;' ><span>13.0</span></td><td style='text-align:center;' ><span>58.2</span></td><td style='text-align:center;' ><span>26.5</span></td><td style='text-align:center;' ><span>/</span></td><td style='text-align:center;' ><span>37.0</span></td></tr>
+              <tr><td style='text-align:left;' ><span>TLLM-7B (Ours)</span></td><td style='text-align:center;' ><span>58.8</span></td><td style='text-align:center;' ><span>66.9</span></td><td style='text-align:center;' ><span>72.6</span></td><td style='text-align:center;' ><ins><span>63.1</span></ins></td><td style='text-align:center;' ><ins><span>86.6</span></ins></td><td style='text-align:center;' ><span>82.6</span></td><td style='text-align:center;' ><ins><span>78.8</span></ins></td><td style='text-align:center;' ><span>72.8</span></td></tr>
+              <tr><td style='text-align:left;' ><span>TLLM-13B (Ours)</span></td><td style='text-align:center;' ><ins><span>62.4</span></ins></td><td style='text-align:center;' ><span>68.2</span></td><td style='text-align:center;' ><ins><span>74.5</span></ins></td><td style='text-align:center;' ><span>62.5</span></td><td style='text-align:center;' ><strong><span>90.7</span></strong></td><td style='text-align:center;' ><ins><span>83.4</span></ins></td><td style='text-align:center;' ><strong><span>80.8</span></strong></td><td style='text-align:center;' ><ins><span>74.7</span></ins></td></tr>
+            </tbody>
+          </table>
+        </figure>
+        <br/>
+        <!--/ Interpolating. -->
+
+        <!-- benchmark. -->
+        <h2 class="title is-3">Benchmark Details</h2>
+        <div class="content has-text-justified">
+          <p>
+            We use six public benchmarks and one self-created benchmark for evaluation. 
+            As the public benchmarks we used are modified to fit the application scenario of TLLM, 
+            we provide a detailed description of these public benchmarks and self-created benchmarks below. 
+            You can obtain the original file of these benchmarks in <code>benchmark</code> folder.
+          </p>
+        </div>
+
+        <li>WikiTQ: Limit the table to a token count of less than 500 and randomly sample 633 instances.</li>
+        <li>TAT-QA: Limit the table to a token count of less than 500 and randomly sample 800 instances.</li>
+        <li>FeTaQA: Limit the table to a token count of less than 500 and randomly sample 753 instances.</li>
+        <li>OTTQA: Limit the table to a token count of less than 500 and use all instances that meet this condition.</li>
+        <li>WikiSQL: As the WikiSQL testset contains incorrect answers and ambiguous questions, we manually filter out 1000 records and construct a subset of the WikiSQL testset called wikisql-human-annotated.</li>
+        <li>Spider: As TLLM currently focuses on single-table queries, we filter out single-table questions in Spider dev ser and also remove questions whose answers are empty.</li>
+        <li>Self-created: We create a new benchmark, including the insert, delete, update, query, merge, and plot operations of tables. For more details, please refer to the paper.</li>
+
+        <!--/ benchmark. -->
+
+      </div>
+    </div>
+    <!--/ Animation. -->
+
+    <!--/ inference. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Inference</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            The inference results of TLLM are provided in <code>inference/results</code> folder. 
+            You can also obtain the inference result by yourself. 
+            The example commands of code and text generation are shown below:
+          </p>
+          <pre><code>cd inference
+python inference.py --dataset wikisql --model_path TLLM-13b
+python inference.py --dataset wtq --model_path TLLM-13b</code></pre>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Prompt Template</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            The prompts we used for generating code solutions and text answers are introduced below.
+          </p>
+        </div>
+        <h3 class="title is-4">Code Solution</h3>
+        <div class="content has-text-justified">
+          <p>
+            The prompt template for the insert, delete, update, query, and plot operations on a single table.
+          </p>
+        </div>
+        <pre><code>[INST]Below are the first few lines two CSV file. You need to write a Python program to solve the provided question.
+          
+Header and first few lines of CSV file 1:
+{csv_data1}
+
+Header and first few lines of CSV file 2:
+{csv_data2}
+
+Question: {question}[/INST]</code></pre><br>
+        <div class="content has-text-justified">
+          <p>
+            The csv_data field is filled with the first few lines of your provided table file. Below is an example:
+          </p>
+        </div>
+        <pre><code>Sex,Length,Diameter,Height,Whole weight,Shucked weight,Viscera weight,Shell weight,Rings
+M,0.455,0.365,0.095,0.514,0.2245,0.101,0.15,15
+M,0.35,0.265,0.09,0.2255,0.0995,0.0485,0.07,7
+F,0.53,0.42,0.135,0.677,0.2565,0.1415,0.21,9
+M,0.44,0.365,0.125,0.516,0.2155,0.114,0.155,10
+I,0.33,0.255,0.08,0.205,0.0895,0.0395,0.055,7</code></pre><br>
+        <h3 class="title is-4">Text Answer</h3>
+        <div class="content has-text-justified">
+          <p>
+            The prompt template for direct text answer generation on short tables.
+          </p>
+        </div>
+        <pre><code>[INST]Offer a thorough and accurate solution that directly addresses the Question outlined in the [Question].
+### [Table Text]
+{table_descriptions}
+          
+### [Table]
+```
+{table_in_csv}
+```
+          
+### [Question]
+{question}
+          
+### [Solution][INST/]</code></pre><br>
+      </div>
+    </div>
+
+
+
+    <!-- Concurrent Work. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Evaluation</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            The python code in <code>evaluation</code> folder is used for reproducing evaluation results. 
+            For code generation benchmarks, you can run the following command to reproduce the result of TLLM-13b on WikiSQL:
+          </p>
+          <pre><code>cd evaluation/wikisql-eval
+tar -zxvf csv_tables.tar.gz 
+python eval.py --infer_data ../../inference/results/TLLM-13b/Infer_wikisql.jsonl</code></pre>
+        </div>
+        <p>
+          For text generation, as the <a herf="https://github.com/thu-coai/CritiqueLLM">[CritiqueLLM]</a> we used has not been published yet, 
+          the judgement of CritiqueLLM is not reproducible. 
+          However, you can obtain the judgement result in <code>inference/results</code> folder and reproduce the results using the following command:
+        </p>
+        <pre><code>cd evaluation/text-eval
+python get_sum_grade.py --grade_data ../../inference/results/TLLM-13b/Grade_wtq.jsonl</code></pre>
+      </div>
+    </div>
+    <!--/ Concurrent Work. -->
+
+    <div class="column is-full-width">
+      <h2 class="title is-3">Contact</h2>
+
+      <div class="content has-text-justified">
+        <p>
+          If you have any questions, we encourage you to either create Github issues 
+          or get in touch with us at <a herf="mailto:tabularllm@gmail.com">tabularllm@gmail.com</a>.
+        </p>
+    </div>
+  </div>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="./static/videos/nerfies_paper.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This means you are free to borrow the <a
+              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
+            we just ask that you link back to this page in the footer.
+            Please remember to remove the analytics code included in the header of the website which
+            you do not want on your website.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
