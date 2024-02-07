@@ -6,7 +6,7 @@
         content="Deformable Neural Radiance Fields creates free-viewpoint portraits (nerfies) from casually captured videos.">
   <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>TableLLM: Enabling Tabular Data Manipulation by LLMs in Real Office Usage Scenarios</title>
+  <title>TableLLM</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
@@ -32,7 +32,6 @@
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
-  <link rel="icon" href="./static/images/favicon.svg">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
@@ -96,46 +95,46 @@
           <h2 class="title is-1 publication-title">TableLLM: Enabling Tabular Data Manipulation by LLMs in Real Office Usage Scenarios</h2>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a>Xiaokang Zhang</a><sup>1*</sup>,
+              Xiaokang Zhang<sup>1*</sup>,
             </span>
             <span class="author-block">
-              <a>Jing Zhang</a><sup>1</sup>,
+              Jing Zhang<sup>1</sup>,
             </span>
             <span class="author-block">
-              <a>Zeyao Ma</a><sup>1*</sup>,
+              Zeyao Ma<sup>1*</sup>,
             </span>
             <span class="author-block">
-              <a>Yang Li</a><sup>1*</sup>,
+              Yang Li<sup>1*</sup>,
             </span>
             <span class="author-block">
-              <a>Bohan Zhang</a><sup>1*</sup>,
+              Bohan Zhang<sup>1*</sup>,
             </span>
             <span class="author-block">
-              <a>Guanlin Li</a><sup>1*</sup>,
+              Guanlin Li<sup>1*</sup>,
             </span>
             <span class="author-block">
-              <a>Zijun Yao</a><sup>2</sup>,
+              Zijun Yao<sup>2</sup>,
             </span>
             <span class="author-block">
-              <a>Kangli Xu</a><sup>2</sup>,
+              Kangli Xu<sup>2</sup>,
             </span>
             <span class="author-block">
-              <a>Jinchang Zhou</a><sup>2</sup>,
+              Jinchang Zhou<sup>2</sup>,
             </span>
             <span class="author-block">
-              <a>Daniel Zhang-Li</a><sup>2</sup>,
+              Daniel Zhang-Li<sup>2</sup>,
             </span>
             <span class="author-block">
-              <a>Jifan Yu</a><sup>2</sup>,
+              Jifan Yu<sup>2</sup>,
             </span>
             <span class="author-block">
-              <a>Shu Zhao</a><sup>3</sup>,
+              Shu Zhao<sup>3</sup>,
             </span>
             <span class="author-block">
-              <a>Juanzi Li</a><sup>2</sup>,
+              Juanzi Li<sup>2</sup>,
             </span>
             <span class="author-block">
-              <a>Jie Tang</a><sup>2</sup>,
+              Jie Tang<sup>2</sup>,
             </span>
           </div>
 
@@ -147,38 +146,9 @@
 
           <div class="column has-text-centered">
             <div class="publication-links">
-              <!-- PDF Link. -->
-              <span class="link-block">
-                <a href="https://arxiv.org/pdf/2011.12948"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fas fa-file-pdf"></i>
-                  </span>
-                  <span>Paper</span>
-                </a>
-              </span>
-              <span class="link-block">
-                <a href="https://arxiv.org/abs/2011.12948"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>arXiv</span>
-                </a>
-              </span>
-              <!-- Video Link. -->
-              <span class="link-block">
-                <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fab fa-youtube"></i>
-                  </span>
-                  <span>Video</span>
-                </a>
-              </span>
               <!-- Code Link. -->
               <span class="link-block">
-                <a href="https://github.com/google/nerfies"
+                <a href="https://github.com/TableLLM/TableLLM"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
@@ -186,14 +156,14 @@
                   <span>Code</span>
                   </a>
               </span>
-              <!-- Dataset Link. -->
+              <!-- Platform Link. -->
               <span class="link-block">
-                <a href="https://github.com/google/nerfies/releases/tag/0.1"
+                <a href="http://36.103.203.47:27824"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
-                      <i class="far fa-images"></i>
+                      <i class="fas fa-desktop"></i>
                   </span>
-                  <span>Data</span>
+                  <span>Platform</span>
                   </a>
             </div>
 
@@ -212,22 +182,20 @@
       <div class="column is-four-fifths">
         <div class="content has-text-justified">
           <p>
-            We present <strong>T</strong>able<strong>LLM</strong>, 
-            a powerful large language model designed to handle tabular data manipulation tasks efficiently, 
-            whether they are embedded in spreadsheets or documents, 
-            meeting the demands of real office scenarios. 
-            The TLLM series encompasses two distinct scales: 
-            <a herf="https://huggingface.co/KAKA22/TLLM-7b">[TLLM-7B]</a> and 
-            <a herf="https://huggingface.co/KAKA22/TLLM-13b">[TLLM-13B]</a>, 
-            which are fine-tuned based on CodeLlama-7B and 13B.
+            We introduce TableLLM, a robust large language model (LLM) with 13 billion parameters, 
+            purpose-built for proficiently handling tabular data manipulation tasks, 
+            whether they are embedded within documents or spreadsheets, catering to real-world office scenarios.
+            We propose a distant supervision method for training, 
+            which comprises a reasoning process extension strategy, 
+            aiding in training LLMs to understand reasoning patterns more effectively 
+            as well as a cross-way validation strategy, ensuring the quality of the self-created data.
           </p>
           <p>
-            TLLM generates either a code solution or a direct text answer 
-            to handle tabular data manipulation tasks based on different scenarios. 
-            Code generation is used for handling spreadsheet-embedded tabular data, 
-            which often involves the insert, delete, update, query, merge, and plot operations of tables. 
-            Text generation is used for handling document-embedded tabular data, 
-            which often involves the query operation of short tables.
+            To evaluate the performance of TableLLM, 
+            we have crafted a benchmark tailored to address both document and spreadsheet formats 
+            as well as constructed a well-organized evaluation pipeline capable of handling both scenarios. 
+            Thorough evaluations underscore the advantages of TableLLM 
+            when compared to various existing general-purpose and tabular data-focused LLMs.
           </p>
         </div>
       </div>
@@ -392,7 +360,7 @@ tar -zxvf csv_tables.tar.gz
 python eval.py --infer_data ../../inference/results/TLLM-13b/Infer_wikisql.jsonl</code></pre>
         </div>
         <p>
-          For text generation, as the <a herf="https://github.com/thu-coai/CritiqueLLM">[CritiqueLLM]</a> we used has not been published yet, 
+          For text generation, as the <a href="https://github.com/thu-coai/CritiqueLLM">[CritiqueLLM]</a> we used has not been published yet, 
           the judgement of CritiqueLLM is not reproducible. 
           However, you can obtain the judgement result in <code>inference/results</code> folder and reproduce the results using the following command:
         </p>
@@ -408,7 +376,7 @@ python get_sum_grade.py --grade_data ../../inference/results/TLLM-13b/Grade_wtq.
       <div class="content has-text-justified">
         <p>
           If you have any questions, we encourage you to either create Github issues 
-          or get in touch with us at <a herf="mailto:tabularllm@gmail.com">tabularllm@gmail.com</a>.
+          or get in touch with us at <a href="mailto:tabularllm@gmail.com">tabularllm@gmail.com</a>.
         </p>
     </div>
   </div>
